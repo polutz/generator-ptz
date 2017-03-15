@@ -1,0 +1,41 @@
+{
+  "name": "generator-ptz",
+  "version": "1.0.0",
+  "description": "Yeoman base generator to create polutz modules.",
+  "main": "index.js",
+  "scripts": {
+    "mocha": "mocha ./generators/**/*.test.js",
+    "test": "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=616c8ea8-74f1-4194-b6bf-9d6cd13b56a3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polutz/generator-ptz.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "polutz",
+    "ddd",
+    "generator"
+  ],
+  "author": "angeloocana.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/polutz/generator-ptz/issues"
+  },
+  "homepage": "https://github.com/polutz/generator-ptz#readme",
+  "devDependencies": {
+    "codecov": "^1.0.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nyc": "^10.1.2",
+    "tslint": "^4.5.1",
+    "typescript": "^2.2.1",
+    "yeoman-assert": "^3.0.0",
+    "yeoman-test": "^1.6.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "yeoman-generator": "^1.1.1"
+  }
+}
