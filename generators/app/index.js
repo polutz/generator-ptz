@@ -32,6 +32,8 @@ module.exports = class extends Generator {
 
     //writing - Where you write the generator specific files (routes, controllers, etc)
     writing() {
+        console.log('ptz options =>>>>>>>>>>>>>>>>>>>>>>>>>>>>',this.options.ptz);
+
         this.fs.copy(this.templatePath('_gulpfile.js'), this.destinationPath('gulpfile.js'));
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
@@ -40,19 +42,12 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('_package.json'),
             this.destinationPath('package.json'),
-            {
-                codecovToken: this.options.codecovToken,
-                appname: this.options.appname,
-                githubAuthorProject: this.options.githubAuthorProject
-            });
+            this.options.ptz);
 
         this.fs.copyTpl(
             this.templatePath('_README.md'),
             this.destinationPath('README.md'),
-            {
-                appname: this.options.appname,
-                githubAuthorProject: this.options.githubAuthorProject
-            });
+            this.options.ptz);
 
         this.fs.copy(this.templatePath('babelrc'), this.destinationPath('.babelrc'));
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
@@ -65,10 +60,7 @@ module.exports = class extends Generator {
         this.fs.copyTpl(
             this.templatePath('src/typings/_index.d.ts'),
             this.destinationPath('src/typings/index.d.ts'),
-            {
-                appname: this.options.appname,
-                appnameStartCase: this.options.appnameStartCase
-            });
+            this.options.ptz);
     }
 
     //conflicts - Where conflicts are handled (used internally)
@@ -78,7 +70,7 @@ module.exports = class extends Generator {
 
     //install - Where installation are run (npm, bower)
     install() {
-        if (!this.options.runNpmInstall)
+        if (!this.options.ptz.runNpmInstall)
             return;
 
         this.npmInstall(['babel-loader'], { 'save-dev': true });

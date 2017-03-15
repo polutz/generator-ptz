@@ -1,11 +1,15 @@
 var _ = require('lodash');
 
+function getAppName(appname) {
+    return _.kebabCase(appname.replace(/\s+/g, '-'));
+}
+
 module.exports = function (that) {
     return that.prompt([{
         type: 'input',
-        name: 'name',
+        name: 'appname',
         message: 'Your project name',
-        default: that.appname, // Default to current folder name
+        default: getAppName(that.appname), // Default to current folder name
         store: true
     },
     {
@@ -27,10 +31,14 @@ module.exports = function (that) {
         default: true,
         store: true
     }]).then((answers) => {
-        that.options.appname = _.kebabCase(answers.name.replace(/\s+/g, ''));
-        that.options.appnameStartCase = _.startCase(that.appname);
-        that.options.codecovToken = answers.codecovToken;
-        that.options.githubAuthorProject = answers.githubAuthor + '/' + answers.name;
-        that.options.runNpmInstall = answers.runNpmInstall;
+        appname = getAppName(answers.appname);
+
+        that.options.ptz = {
+            appname: appname,
+            appnameStartCase: _.startCase(appname).replace(/\s+/g, ''),
+            codecovToken: answers.codecovToken,
+            githubAuthorProject: answers.githubAuthor + '/' + appname,
+            runNpmInstall: answers.runNpmInstall
+        }
     });
 }
