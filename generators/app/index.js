@@ -41,17 +41,17 @@ module.exports = class extends Generator {
             this.templatePath('_package.json'),
             this.destinationPath('package.json'),
             {
-                codecovToken: this.codecovToken,
-                appname: this.appname,
-                githubAuthorProject: this.githubAuthorProject
+                codecovToken: this.options.codecovToken,
+                appname: this.options.appname,
+                githubAuthorProject: this.options.githubAuthorProject
             });
 
         this.fs.copyTpl(
             this.templatePath('_README.md'),
             this.destinationPath('README.md'),
             {
-                appname: this.appname,
-                githubAuthorProject: this.githubAuthorProject
+                appname: this.options.appname,
+                githubAuthorProject: this.options.githubAuthorProject
             });
 
         this.fs.copy(this.templatePath('babelrc'), this.destinationPath('.babelrc'));
@@ -66,8 +66,8 @@ module.exports = class extends Generator {
             this.templatePath('src/typings/_index.d.ts'),
             this.destinationPath('src/typings/index.d.ts'),
             {
-                appname: this.appname,
-                appnameStartCase: this.appnameStartCase
+                appname: this.options.appname,
+                appnameStartCase: this.options.appnameStartCase
             });
     }
 
@@ -78,7 +78,7 @@ module.exports = class extends Generator {
 
     //install - Where installation are run (npm, bower)
     install() {
-        if (!this.runNpmInstall)
+        if (!this.options.runNpmInstall)
             return;
 
         this.npmInstall(['babel-loader'], { 'save-dev': true });

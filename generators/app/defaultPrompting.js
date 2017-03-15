@@ -27,10 +27,10 @@ module.exports = function (that) {
         default: true,
         store: true
     }]).then((answers) => {
-        that.appname = _.kebabCase(answers.name.replace(/\s+/g, ''));
-        that.appnameStartCase = _.startCase(that.appname);
-        that.codecovToken = answers.codecovToken;
-        that.githubAuthorProject = answers.githubAuthor + '/' + answers.name;
-        that.runNpmInstall = answers.runNpmInstall;
+        that.options.appname = _.kebabCase(answers.name.replace(/\s+/g, ''));
+        that.options.appnameStartCase = _.startCase(that.appname);
+        that.options.codecovToken = answers.codecovToken;
+        that.options.githubAuthorProject = answers.githubAuthor + '/' + answers.name;
+        that.options.runNpmInstall = answers.runNpmInstall;
     });
 }
