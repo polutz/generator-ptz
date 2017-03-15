@@ -1,7 +1,8 @@
 'use strict';
 
 var Generator = require('yeoman-generator'),
-    _ = require('lodash');
+    _ = require('lodash'),
+    defaultPrompting = require('./defaultPrompting');
 
 module.exports = class extends Generator {
 
@@ -11,45 +12,12 @@ module.exports = class extends Generator {
 
     //initializing - Your initialization methods (checking current project state, getting configs, etc)
     initializing() {
-        this.log('initializing');
     }
 
     //prompting - Where you prompt users for options (where you'd call this.prompt())
     prompting() {
-        this.log('prompting');
-
-        return this.prompt([{
-            type: 'input',
-            name: 'name',
-            message: 'Your project name',
-            default: this.appname, // Default to current folder name
-            store: true
-        },
-        {
-            type: 'input',
-            name: 'githubAuthor',
-            message: 'git hub Author',
-            default: 'polutz',
-            store: true
-        },
-        {
-            type: 'input',
-            name: 'codecovToken',
-            message: 'get codecov token at https://codecov.io/'
-        },
-        {
-            type: 'confirm',
-            name: 'runNpmInstall',
-            message: 'Run npm install?',
-            default: true,
-            store: true
-        }]).then((answers) => {
-            this.appname = _.kebabCase(answers.name.replace(/\s+/g, ''));
-            this.appnameStartCase = _.startCase(this.appname);
-            this.codecovToken = answers.codecovToken;
-            this.githubAuthorProject = answers.githubAuthor + '/' + answers.name;
-            this.runNpmInstall = answers.runNpmInstall;
-        });
+        if (!this.options.isComposing)
+            return defaultPrompting(this);
     }
 
     //    configuring - Saving configurations and configure the project (creating.editorconfig files and other metadata files)
