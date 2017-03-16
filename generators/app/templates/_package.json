@@ -4,8 +4,10 @@
   "description": "this is a Polutz Domain module.",
   "main": "dist/index.js",
   "scripts": {
+    "lint": "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
+    "js": "gulp js",
+    "pretest": "npm-run-all --parallel js lint",
     "mocha": "mocha ./dist/**/*.js --compilers js:babel-core/register --require babel-polyfill",
-    "pretest": "gulp js",
     "test": "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=<%= codecovToken %>"
   },
   "repository": {

@@ -32,8 +32,9 @@ module.exports = class extends Generator {
 
     //writing - Where you write the generator specific files (routes, controllers, etc)
     writing() {
-        console.log('ptz options =>>>>>>>>>>>>>>>>>>>>>>>>>>>>',this.options.ptz);
+        console.log('ptz options =>>>>>>>>>>>>>>>>>>>>>>>>>>>>', this.options.ptz);
 
+        this.fs.copy(this.templatePath('_tslint.json'), this.destinationPath('tslint.json'));
         this.fs.copy(this.templatePath('_gulpfile.js'), this.destinationPath('gulpfile.js'));
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
@@ -90,6 +91,7 @@ module.exports = class extends Generator {
         this.npmInstall(['typescript'], { 'save-dev': true });
         this.npmInstall(['typings'], { 'save-dev': true });
         this.npmInstall(['tslint'], { 'save-dev': true });
+        this.npmInstall(['npm-run-all'], { 'save-dev': true });
     }
 
     //end - Called last, cleanup, say good bye, etc
