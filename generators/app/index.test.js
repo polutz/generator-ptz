@@ -26,8 +26,7 @@ describe('ptz-domain:app', function () {
                 '.travis.yml',
 
                 'src/index.ts',
-                'src/typings/index.d.ts',
-
+                'src/errors.ts',
                 'typings/index.d.ts'
             ]);
         });
