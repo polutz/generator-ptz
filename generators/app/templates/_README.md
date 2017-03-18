@@ -6,7 +6,7 @@
 [![bitHound Score](https://www.bithound.io/github/gotwarlost/istanbul/badges/score.svg)](https://www.bithound.io/github/<%= githubAuthorProject %>)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-<%= appname %> is a Polutz Domain module.
+<%= appname %> is a Polutz module.
 
 
 ## NPM Global packages
