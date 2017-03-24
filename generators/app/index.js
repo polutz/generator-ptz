@@ -70,7 +70,6 @@ module.exports = class extends Generator {
         if (!this.options.ptz.runNpmInstall)
             return;
 
-        this.npmInstall(['babel-loader'], { 'save-dev': true });
         this.npmInstall(['ptz-assert'], { 'save-dev': true });
         this.npmInstall(['babel-core'], { 'save-dev': true });
         this.npmInstall(['babel-polyfill'], { 'save-dev': true });
