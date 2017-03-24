@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "typings": "src/index.ts",
   "scripts": {
+    "postinstall": "typings install",
     "lint": "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
     "js": "gulp js",
     "pretest": "npm-run-all --parallel js lint",
