@@ -50,7 +50,6 @@ module.exports = class extends Generator {
             this.destinationPath('README.md'),
             this.options.ptz);
 
-        this.fs.copy(this.templatePath('babelrc'), this.destinationPath('.babelrc'));
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
 
