@@ -39,6 +39,7 @@ module.exports = class extends Generator {
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
         this.fs.copy(this.templatePath('_typings.json'), this.destinationPath('typings.json'));
+        this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));
 
         this.fs.copyTpl(
             this.templatePath('_package.json'),

@@ -23,6 +23,7 @@ describe('ptz-domain:app', function () {
                 'typings.json',
                 '.gitignore',
                 '.travis.yml',
+                'CHANGELOG.md',
 
                 'src/index.ts',
                 'src/errors.ts',
