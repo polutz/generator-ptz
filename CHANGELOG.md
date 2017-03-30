@@ -1,7 +1,7 @@
 ## master
 
 
-## 1.2.10 ...
+## 1.2.10 (March 30, 2017)
 
 * Add npm badget to README.md
 
