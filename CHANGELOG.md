@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.2.10 ...
+
+* Add npm badget to README.md
+
 ## 1.2.9 (March 15, 2017)
 
 * Add CHANGELOG.md template.
