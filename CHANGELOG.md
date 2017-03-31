@@ -1,5 +1,8 @@
 ## master
 
+## 1.2.11 (March 31, 2017)
+
+* Using current package.json and updating info
 
 ## 1.2.10 (March 30, 2017)
 
