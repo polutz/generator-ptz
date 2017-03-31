@@ -16,7 +16,7 @@
     "type": "git",
     "url": "git+https://github.com/<%= githubAuthorProject %>.git"
   },
-  "author": "angeloocana.com",
+  "author": "github.com/angeloocana",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/<%= githubAuthorProject %>/issues"
