@@ -74,10 +74,7 @@ module.exports = class extends Generator {
         this.npmInstall(['babel-core'], { 'save-dev': true });
         this.npmInstall(['babel-polyfill'], { 'save-dev': true });
         this.npmInstall(['babel-preset-es2015'], { 'save-dev': true });
-        this.npmInstall(['codecov'], { 'save-dev': true });
-        this.npmInstall(['gulp'], { 'save-dev': true });
-        this.npmInstall(['gulp-babel'], { 'save-dev': true });
-        this.npmInstall(['gulp-typescript'], { 'save-dev': true });
+        this.npmInstall(['codecov'], { 'save-dev': true });        
         this.npmInstall(['istanbul'], { 'save-dev': true });
         this.npmInstall(['mocha'], { 'save-dev': true });
         this.npmInstall(['mocha-lcov-reporter'], { 'save-dev': true });
@@ -86,6 +83,9 @@ module.exports = class extends Generator {
         this.npmInstall(['typescript'], { 'save-dev': true });
         this.npmInstall(['typings'], { 'save-dev': true });
         this.npmInstall(['tslint'], { 'save-dev': true });
+        this.npmInstall(['gulp'], { 'save-dev': true });
+        this.npmInstall(['gulp-babel'], { 'save-dev': true });
+        this.npmInstall(['gulp-typescript'], { 'save-dev': true });
         this.npmInstall(['npm-run-all'], { 'save-dev': true });
     }
 
