@@ -87,8 +87,11 @@ module.exports = class extends Generator {
 
         this.fs.copy(this.templatePath('typings/_index.d.ts'), this.destinationPath('typings/index.d.ts'));
 
-        this.fs.copy(this.templatePath('src/_index.ts'), this.destinationPath('src/index.ts'));
-        this.fs.copy(this.templatePath('src/_errors.ts'), this.destinationPath('src/errors.ts'));
+        if (!this.options.ptz.dontCreateIndexTs)
+            this.fs.copy(this.templatePath('src/_index.ts'), this.destinationPath('src/index.ts'));
+
+        if (!this.options.ptz.dontCreateErrorsTs)
+            this.fs.copy(this.templatePath('src/_errors.ts'), this.destinationPath('src/errors.ts'));
     }
 
     //conflicts - Where conflicts are handled (used internally)
