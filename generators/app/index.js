@@ -36,10 +36,10 @@ module.exports = class extends Generator {
 
         const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {});
 
-        const pkg = extend({
+        const pkg = _.merge({
             name: this.options.ptz.appname,
             version: "1.0.0",
-            description: this.props.description || "this is a Polutz module.",
+            description: this.options.ptz.description || "this is a Polutz module.",
             main: "dist/index.js",
             typings: "src/index.ts",
             scripts: {
