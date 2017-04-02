@@ -21,9 +21,9 @@ describe('ptz-domain:app', function () {
                 'README.md',
                 'tsconfig.json',
                 'typings.json',
-                '.babelrc',
                 '.gitignore',
                 '.travis.yml',
+                'CHANGELOG.md',
 
                 'src/index.ts',
                 'src/errors.ts',

@@ -1,6 +1,6 @@
 {
   "name": "generator-ptz",
-  "version": "1.2.8",
+  "version": "1.2.12",
   "description": "Yeoman base generator to create polutz modules.",
   "main": "index.js",
   "scripts": {
