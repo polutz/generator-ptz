@@ -1,6 +1,11 @@
 ## master
 
 
+## 1.3.0 (April 5, 2017)
+
+* Add debug support for vs code.
+* Remove gulp.
+
 ## 1.2.12 (March 31, 2017)
 
 * Bug fix.
