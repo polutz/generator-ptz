@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.1 (April 6, 2017)
+
+* Add ptz-babel-register.
+
 ## 1.3.0 (April 5, 2017)
 
 * Add debug support for vs code.
