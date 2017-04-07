@@ -47,7 +47,7 @@ module.exports = class extends Generator {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
                 js: "tsc",
                 pretest: "npm-run-all --parallel js lint",
-                mocha: "mocha ./dist/**/*.js --compilers js:babel-core/register --require babel-polyfill",
+                mocha: "mocha ./dist/**/*.js --require babel-polyfill --compilers js:./ptz-babel-register.js",
                 test: "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=" + this.options.ptz.codecovToken,
                 predebug: "npm run pretest",
                 debug: "babel-node --presets es2015 --nolazy --debug-brk=5858 dist/index.js"
@@ -77,6 +77,7 @@ module.exports = class extends Generator {
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
         this.fs.copy(this.templatePath('_typings.json'), this.destinationPath('typings.json'));
         this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));
+        this.fs.copy(this.templatePath('_ptz-babel-register.js'), this.destinationPath('ptz-babel-register.js'));
 
         this.fs.copy(this.templatePath('vscode/_launch.json'),
             this.destinationPath('.vscode/launch.json'));
