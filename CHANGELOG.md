@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.2 (April 6, 2017)
+
+* Fix ptz-babel-register to compile all ptz- modules.
+
 ## 1.3.1 (April 6, 2017)
 
 * Add ptz-babel-register.
