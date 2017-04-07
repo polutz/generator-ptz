@@ -44,12 +44,12 @@ module.exports = class extends Generator {
             typings: "src/index.ts",
             scripts: {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
-                js: "tsc",
+                js: "tsc && babel dist -d dist --presets es2015",
                 pretest: "npm-run-all --parallel js lint",
-                mocha: "mocha ./dist/**/*.js --require babel-polyfill --compilers js:./ptz-babel-register.js",
+                mocha: "mocha ./dist/**/*.js",
                 test: "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=" + this.options.ptz.codecovToken,
                 predebug: "npm run pretest",
-                debug: "babel-node --presets es2015 --nolazy --debug-brk=5858 dist/index.js"
+                debug: "node --nolazy --debug-brk=5858 dist/index.js"
             },
             repository: {
                 type: "git",
@@ -70,7 +70,6 @@ module.exports = class extends Generator {
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
         this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));
-        this.fs.copy(this.templatePath('_ptz-babel-register.js'), this.destinationPath('ptz-babel-register.js'));
 
         this.fs.copy(this.templatePath('vscode/_launch.json'),
             this.destinationPath('.vscode/launch.json'));
@@ -102,8 +101,7 @@ module.exports = class extends Generator {
 
         this.npmInstall(['ptz-assert'], { 'save-dev': true });
 
-        this.npmInstall(['babel-core'], { 'save-dev': true });
-        this.npmInstall(['babel-polyfill'], { 'save-dev': true });
+        this.npmInstall(['babel-cli'], { 'save-dev': true });
         this.npmInstall(['babel-preset-es2015'], { 'save-dev': true });
 
         this.npmInstall(['codecov'], { 'save-dev': true });
@@ -116,8 +114,8 @@ module.exports = class extends Generator {
         this.npmInstall(['tslint'], { 'save-dev': true });
         this.npmInstall(['npm-run-all'], { 'save-dev': true });
 
-        this.npmInstall(['@types/mocha'], { 'save': true });
-        this.npmInstall(['@types/node'], { 'save': true });
+        this.npmInstall(['@types/mocha'], { 'save-dev': true });
+        this.npmInstall(['@types/node'], { 'save-dev': true });
     }
 
     //end - Called last, cleanup, say good bye, etc

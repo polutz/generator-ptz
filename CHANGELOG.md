@@ -3,6 +3,7 @@
 
 ## ... (, 2017)
 
+* Remove babel-node, babel-polyfill, babel-core and ptz-babel-register.
 * Remove babel settings from package.json.
 
 ## 1.3.4 (April 7, 2017)
