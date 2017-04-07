@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.4 (April 7, 2017)
+
+* Remove typings.
+
 ## 1.3.3 (April 7, 2017)
 
 * Remove typings. Now it is possible to use typings throw npm modules.
