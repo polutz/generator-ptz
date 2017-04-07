@@ -60,12 +60,7 @@ module.exports = class extends Generator {
             bugs: {
                 url: "https://github.com/" + this.options.ptz.githubAuthorProject + "/issues"
             },
-            homepage: "https://github.com/" + this.options.ptz.githubAuthorProject + "#readme",
-            babel: {
-                presets: [
-                    "es2015"
-                ]
-            }
+            homepage: "https://github.com/" + this.options.ptz.githubAuthorProject + "#readme"
         }, currentPkg);
 
         // Let's extend package.json so we're not overwriting user previous fields

@@ -1,6 +1,10 @@
 ## master
 
 
+## ... (, 2017)
+
+* Remove babel settings from package.json.
+
 ## 1.3.4 (April 7, 2017)
 
 * Remove typings.
