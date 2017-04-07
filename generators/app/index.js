@@ -118,7 +118,6 @@ module.exports = class extends Generator {
         this.npmInstall(['nyc'], { 'save-dev': true });
         this.npmInstall(['sinon'], { 'save-dev': true });
         this.npmInstall(['typescript'], { 'save-dev': true });
-        this.npmInstall(['typings'], { 'save-dev': true });
         this.npmInstall(['tslint'], { 'save-dev': true });
         this.npmInstall(['npm-run-all'], { 'save-dev': true });
 
