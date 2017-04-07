@@ -43,7 +43,6 @@ module.exports = class extends Generator {
             main: "dist/index.js",
             typings: "src/index.ts",
             scripts: {
-                postinstall: "typings install",
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
                 js: "tsc",
                 pretest: "npm-run-all --parallel js lint",
@@ -75,7 +74,6 @@ module.exports = class extends Generator {
         this.fs.copy(this.templatePath('_tslint.json'), this.destinationPath('tslint.json'));
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
-        this.fs.copy(this.templatePath('_typings.json'), this.destinationPath('typings.json'));
         this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));
         this.fs.copy(this.templatePath('_ptz-babel-register.js'), this.destinationPath('ptz-babel-register.js'));
 
@@ -89,8 +87,6 @@ module.exports = class extends Generator {
 
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
-
-        this.fs.copy(this.templatePath('typings/_index.d.ts'), this.destinationPath('typings/index.d.ts'));
 
         if (!this.options.ptz.dontCreateIndexTs)
             this.fs.copy(this.templatePath('src/_index.ts'), this.destinationPath('src/index.ts'));
@@ -125,6 +121,9 @@ module.exports = class extends Generator {
         this.npmInstall(['typings'], { 'save-dev': true });
         this.npmInstall(['tslint'], { 'save-dev': true });
         this.npmInstall(['npm-run-all'], { 'save-dev': true });
+
+        this.npmInstall(['@types/mocha'], { 'save': true });
+        this.npmInstall(['@types/node'], { 'save': true });
     }
 
     //end - Called last, cleanup, say good bye, etc

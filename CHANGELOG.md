@@ -1,6 +1,10 @@
 ## master
 
 
+## .. (, 2017)
+
+* Remove typings. Now it is possible to use typings throw npm modules.
+
 ## 1.3.2 (April 6, 2017)
 
 * Fix ptz-babel-register to compile all ptz- modules.

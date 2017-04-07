@@ -19,23 +19,18 @@ describe('ptz-domain:app', function () {
                 'package.json',
                 'README.md',
                 'tsconfig.json',
-                'typings.json',
                 '.gitignore',
                 '.travis.yml',
                 'CHANGELOG.md',
                 'ptz-babel-register.js',
 
                 'src/index.ts',
-                'src/errors.ts',
-                'typings/index.d.ts'
+                'src/errors.ts'
             ]);
         });
-
-        // it('adds default ngapp', function () {
-        //     assert.fileContent('src/app/app.js', /angular.module\('app'/);
-        // });
     });
 
+    // test code example
     // describe('ngapp prompt', function () {
     //     before(function (done) {
     //         helpers.run(path.join(__dirname, '../app'))
