@@ -1,6 +1,6 @@
 ## master
 
-## 1.3. (April , 2017)
+## 1.3.7 (April , 2017)
 
 * Add '--require babel-polyfill' to mocha npm script.
 
