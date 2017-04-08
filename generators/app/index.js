@@ -46,7 +46,7 @@ module.exports = class extends Generator {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
                 js: "rimraf dist && tsc && babel dist -d dist --presets es2015",
                 pretest: "npm-run-all --parallel js lint",
-                mocha: "mocha ./dist/**/*.js",
+                mocha: "mocha ./dist/**/*.js --require babel-polyfill",
                 test: "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=" + this.options.ptz.codecovToken,
                 predebug: "npm run pretest",
                 debug: "node --nolazy --debug-brk=5858 dist/index.js"
@@ -61,7 +61,7 @@ module.exports = class extends Generator {
                 url: "https://github.com/" + this.options.ptz.githubAuthorProject + "/issues"
             },
             homepage: "https://github.com/" + this.options.ptz.githubAuthorProject + "#readme",
-            "devDependencies": {
+            devDependencies: {
                 "babel-cli": "^6.24.1",
                 "babel-preset-es2015": "^6.24.1",
                 "codecov": "^2.1.0",
