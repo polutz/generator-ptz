@@ -44,7 +44,7 @@ module.exports = class extends Generator {
             typings: "src/index.ts",
             scripts: {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
-                js: "tsc && babel dist -d dist --presets es2015",
+                js: "rimraf dist && tsc && babel dist -d dist --presets es2015",
                 pretest: "npm-run-all --parallel js lint",
                 mocha: "mocha ./dist/**/*.js",
                 test: "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=" + this.options.ptz.codecovToken,
@@ -60,7 +60,24 @@ module.exports = class extends Generator {
             bugs: {
                 url: "https://github.com/" + this.options.ptz.githubAuthorProject + "/issues"
             },
-            homepage: "https://github.com/" + this.options.ptz.githubAuthorProject + "#readme"
+            homepage: "https://github.com/" + this.options.ptz.githubAuthorProject + "#readme",
+            "devDependencies": {
+                "babel-cli": "^6.24.1",
+                "babel-preset-es2015": "^6.24.1",
+                "codecov": "^2.1.0",
+                "istanbul": "^0.4.5",
+                "mocha": "^3.2.0",
+                "mocha-lcov-reporter": "^1.3.0",
+                "npm-run-all": "^4.0.2",
+                "nyc": "^10.2.0",
+                "ptz-assert": "^1.6.3",
+                "rimraf": "^2.6.1",
+                "sinon": "^2.1.0",
+                "tslint": "^5.0.0",
+                "typescript": "^2.2.2",
+                "@types/mocha": "^2.2.40",
+                "@types/node": "^7.0.12"
+            }
         }, currentPkg);
 
         // Let's extend package.json so we're not overwriting user previous fields
@@ -96,26 +113,6 @@ module.exports = class extends Generator {
 
     //install - Where installation are run (npm, bower)
     install() {
-        if (!this.options.ptz.runNpmInstall)
-            return;
-
-        this.npmInstall(['ptz-assert'], { 'save-dev': true });
-
-        this.npmInstall(['babel-cli'], { 'save-dev': true });
-        this.npmInstall(['babel-preset-es2015'], { 'save-dev': true });
-
-        this.npmInstall(['codecov'], { 'save-dev': true });
-        this.npmInstall(['istanbul'], { 'save-dev': true });
-        this.npmInstall(['mocha'], { 'save-dev': true });
-        this.npmInstall(['mocha-lcov-reporter'], { 'save-dev': true });
-        this.npmInstall(['nyc'], { 'save-dev': true });
-        this.npmInstall(['sinon'], { 'save-dev': true });
-        this.npmInstall(['typescript'], { 'save-dev': true });
-        this.npmInstall(['tslint'], { 'save-dev': true });
-        this.npmInstall(['npm-run-all'], { 'save-dev': true });
-
-        this.npmInstall(['@types/mocha'], { 'save-dev': true });
-        this.npmInstall(['@types/node'], { 'save-dev': true });
     }
 
     //end - Called last, cleanup, say good bye, etc

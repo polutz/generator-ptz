@@ -1,5 +1,9 @@
 ## master
 
+## ... (April 7, 2017)
+
+* Clean dist folder before compile js.
+* Add dependencies to package.json.
 
 ## 1.3.5 (April 7, 2017)
 
