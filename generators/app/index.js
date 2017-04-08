@@ -32,7 +32,8 @@ module.exports = class extends Generator {
 
     //writing - Where you write the generator specific files (routes, controllers, etc)
     writing() {
-        console.log('ptz options =>>>>>>>>>>>>>>>>>>>>>>>>>>>>', this.options.ptz);
+        //////////////////////////////////////////////////////////////
+        /// package.json - begin
 
         const currentPkg = this.fs.readJSON(this.destinationPath('package.json'), {});
 
@@ -83,9 +84,47 @@ module.exports = class extends Generator {
         // Let's extend package.json so we're not overwriting user previous fields
         this.fs.writeJSON(this.destinationPath('package.json'), pkg);
 
+        /// package.json - end
+        //////////////////////////////////////////////////////////////
+
+
+        //////////////////////////////////////////////////////////////
+        /// tsconfig.json - begin
+
+        const currentTsconfig = this.fs.readJSON(this.destinationPath('tsconfig.json'), {});
+
+        const newTsconfig = _.merge({
+            "compilerOptions": {
+                "module": "es6",
+                "moduleResolution": "node",
+                "noImplicitAny": false,
+                "removeComments": true,
+                "preserveConstEnums": true,
+                "target": "ES6",
+                "sourceMap": true,
+                "listFiles": false,
+                "outDir": "dist/",
+                "allowSyntheticDefaultImports": true
+            },
+            "include": [
+                "src/**/*.d.ts",
+                "src/**/*.ts",
+                "src/**/*.tsx",
+                "src/**/*.test.ts"
+            ],
+            "exclude": [
+                "node_modules"
+            ]
+        }, currentTsconfig);
+
+        // Let's extend package.json so we're not overwriting user previous fields
+        this.fs.writeJSON(this.destinationPath('tsconfig.json'), newTsconfig);
+
+        /// tsconfig.json - end
+        //////////////////////////////////////////////////////////////
+
         this.fs.copy(this.templatePath('_tslint.json'), this.destinationPath('tslint.json'));
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
-        this.fs.copy(this.templatePath('_tsconfig.json'), this.destinationPath('tsconfig.json'));
         this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));
 
         this.fs.copy(this.templatePath('vscode/_launch.json'),
