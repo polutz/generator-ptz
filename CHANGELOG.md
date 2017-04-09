@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.10 (April 9, 2017)
+
+* Clean .babelrc
+
 ## 1.3.9 (April 9, 2017)
 
 * Add .babelrc
