@@ -123,6 +123,31 @@ module.exports = class extends Generator {
         /// tsconfig.json - end
         //////////////////////////////////////////////////////////////
 
+
+        //////////////////////////////////////////////////////////////
+        /// .babelrc - begin
+
+        const currentBabelrc = this.fs.readJSON(this.destinationPath('.babelrc'), {});
+
+        const newBabelrc = _.merge(
+            {
+                "presets": [
+                    "es2015",
+                    "stage-0",
+                    "react"
+                ],
+                "plugins": [
+                    "./build/babelRelayPlugin"
+                ]
+            }, currentBabelrc);
+
+        // Let's extend package.json so we're not overwriting user previous fields
+        this.fs.writeJSON(this.destinationPath('.babelrc'), newBabelrc);
+
+        /// tsconfig.json - end
+        //////////////////////////////////////////////////////////////
+
+
         this.fs.copy(this.templatePath('_tslint.json'), this.destinationPath('tslint.json'));
         this.fs.copy(this.templatePath('_LICENSE'), this.destinationPath('LICENSE'));
         this.fs.copy(this.templatePath('_CHANGELOG.md'), this.destinationPath('CHANGELOG.md'));

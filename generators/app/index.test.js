@@ -22,6 +22,7 @@ describe('ptz-domain:app', function () {
                 '.gitignore',
                 '.travis.yml',
                 'CHANGELOG.md',
+                '.babelrc',
 
                 'src/index.ts',
                 'src/errors.ts'
