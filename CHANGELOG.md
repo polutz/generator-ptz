@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.9 (April 9, 2017)
+
+* Add .babelrc
+
 ## 1.3.8 (April 8, 2017)
 
 * Concat tsconfig.json.
