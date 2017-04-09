@@ -1,6 +1,11 @@
 ## master
 
 
+
+## 1.3.11 (April 9, 2017)
+
+* Store codecov token
+
 ## 1.3.10 (April 9, 2017)
 
 * Clean .babelrc
