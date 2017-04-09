@@ -22,7 +22,8 @@ module.exports = function (that) {
     {
         type: 'input',
         name: 'codecovToken',
-        message: 'get codecov token at https://codecov.io/'
+        message: 'get codecov token at https://codecov.io/',
+        store: true
     }]).then((answers) => {
         appname = getAppName(answers.appname);
 
