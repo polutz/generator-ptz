@@ -132,12 +132,7 @@ module.exports = class extends Generator {
         const newBabelrc = _.merge(
             {
                 "presets": [
-                    "es2015",
-                    "stage-0",
-                    "react"
-                ],
-                "plugins": [
-                    "./build/babelRelayPlugin"
+                    "es2015"
                 ]
             }, currentBabelrc);
 
