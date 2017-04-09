@@ -139,7 +139,7 @@ module.exports = class extends Generator {
         // Let's extend package.json so we're not overwriting user previous fields
         this.fs.writeJSON(this.destinationPath('.babelrc'), newBabelrc);
 
-        /// tsconfig.json - end
+        /// .babelrc - end
         //////////////////////////////////////////////////////////////
 
 
