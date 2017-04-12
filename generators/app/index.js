@@ -158,6 +158,11 @@ module.exports = class extends Generator {
             this.destinationPath('README.md'),
             this.options.ptz);
 
+        this.fs.copyTpl(
+            this.templatePath('_README.pt-br.md'),
+            this.destinationPath('README.pt-br.md'),
+            this.options.ptz);
+
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
 

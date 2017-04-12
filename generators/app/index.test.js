@@ -18,6 +18,7 @@ describe('ptz-domain:app', function () {
                 'LICENSE',
                 'package.json',
                 'README.md',
+                'README.pt-br.md',
                 'tsconfig.json',
                 '.gitignore',
                 '.travis.yml',

@@ -7,40 +7,40 @@
 [![bitHound Score](https://www.bithound.io/github/gotwarlost/istanbul/badges/score.svg)](https://www.bithound.io/github/<%= githubAuthorProject %>)
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 
-## Translations
+## Traduções
 [pt-br](https://github.com/<%= githubAuthorProject %>/blob/master/README.pt-br.md)
 [en-us](https://github.com/<%= githubAuthorProject %>/blob/master/README.md)
 
-<%= appname %> is a Polutz module.
+<%= appname %> é um módulo Polutz.
 
 
-## Use
+## Como usar
 
-### Install
+### Instalação
 ```
     npm install --save <%= appname %>
 ```
 
-### How to use
+### Como usar
 ```
     import  from <%= appname %>;
 
 ```
 
 
-## Contribute
+## Contribuir com o projeto
 
 ### NPM Global packages
 ```
     npm install -g ts-node babel-cli
 ```
 
-### Setup
+### Instalação
 ```
     npm install   
 ```
 
-### Test
+### Teste
 ```
     npm test
 ```
