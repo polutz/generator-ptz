@@ -10,24 +10,33 @@
 <%= appname %> is a Polutz module.
 
 
-## NPM Global packages
+## Use
+
+### Install
 ```
-    npm install ts-node -g
-    npm install typescript-node -g
-    npm install babel-cli -g
+    npm install --save <%= appname %>
 ```
 
-## Typings Global Packages 
+### How to use
 ```
-    typings install dt~mocha --global --save
+    import  from <%= appname %>;
+
 ```
 
-## Setup
+
+## Contribute
+
+### NPM Global packages
+```
+    npm install -g ts-node babel-cli
+```
+
+### Setup
 ```
     npm install   
 ```
 
-## Test
+### Test
 ```
     npm test
 ```
