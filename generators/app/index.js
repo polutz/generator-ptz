@@ -78,6 +78,9 @@ module.exports = class extends Generator {
                 "typescript": "^2.2.2",
                 "@types/mocha": "^2.2.40",
                 "@types/node": "^7.0.12"
+            },
+            dependencies: {
+                "ptz-log": "^1.0.0"
             }
         }, currentPkg);
 
