@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.14 (April 13, 2017)
+
+* Remove console.log.
+
 ## 1.3.13 (April 13, 2017)
 
 * Compose prompt questions.
