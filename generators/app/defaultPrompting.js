@@ -4,8 +4,8 @@ function getAppName(appname) {
     return _.kebabCase(appname.replace(/\s+/g, '-'));
 }
 
-module.exports = function (that) {
-    return that.prompt([{
+module.exports = function (that, askFor, getAnswers) {
+    var defaultAskFor = [{
         type: 'input',
         name: 'appname',
         message: 'Your project name',
@@ -24,7 +24,11 @@ module.exports = function (that) {
         name: 'codecovToken',
         message: 'get codecov token at https://codecov.io/',
         store: true
-    }]).then((answers) => {
+    }];
+
+    var allQuestions = askFor ? defaultAskFor.concat(askFor) : defaultAskFor;
+
+    return that.prompt(allQuestions).then((answers) => {
         appname = getAppName(answers.appname);
 
         that.options.ptz = {
@@ -34,5 +38,10 @@ module.exports = function (that) {
             githubAuthorProject: answers.githubAuthor + '/' + appname,
             runNpmInstall: answers.runNpmInstall
         }
+
+        console.log('getAnswers', getAnswers);
+
+        if (getAnswers)
+            getAnswers(answers);
     });
 }
