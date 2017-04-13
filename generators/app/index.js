@@ -22,12 +22,10 @@ module.exports = class extends Generator {
 
     //    configuring - Saving configurations and configure the project (creating.editorconfig files and other metadata files)
     configuring() {
-        this.log('configuring');
     }
 
     //default - If the method name doesn't match a priority, it will be pushed to this group.
     default() {
-        this.log('default');
     }
 
     //writing - Where you write the generator specific files (routes, controllers, etc)
@@ -175,7 +173,6 @@ module.exports = class extends Generator {
 
     //conflicts - Where conflicts are handled (used internally)
     conflicts() {
-        this.log('conflicts');
     }
 
     //install - Where installation are run (npm, bower)
@@ -184,7 +181,6 @@ module.exports = class extends Generator {
 
     //end - Called last, cleanup, say good bye, etc
     end() {
-        this.log('end');
     }
 };
 

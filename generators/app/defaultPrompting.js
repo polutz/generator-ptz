@@ -39,8 +39,6 @@ module.exports = function (that, askFor, getAnswers) {
             runNpmInstall: answers.runNpmInstall
         }
 
-        console.log('getAnswers', getAnswers);
-
         if (getAnswers)
             getAnswers(answers);
     });
