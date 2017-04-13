@@ -1,6 +1,11 @@
 ## master
 
 
+## 1.3.12 (April 12, 2017)
+
+* Add pt-br README.md translation.
+* Update README.md usage and contribuition.
+* Add ptz-log as dependencie;
 
 ## 1.3.11 (April 9, 2017)
 
