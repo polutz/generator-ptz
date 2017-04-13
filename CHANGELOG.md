@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.13 (April 13, 2017)
+
+* Compose prompt questions.
+
 ## 1.3.12 (April 12, 2017)
 
 * Add pt-br README.md translation.
