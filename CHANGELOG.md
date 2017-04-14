@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.15 (April 14, 2017)
+
+* Add index.test.ts.
+
 ## 1.3.14 (April 13, 2017)
 
 * Remove console.log.
