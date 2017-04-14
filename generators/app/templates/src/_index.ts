@@ -1,5 +1,10 @@
 import errors from './errors';
 
-export{
+function addTest(a: number, b: number): number {
+    return a + b;
+}
+
+export {
+    addTest,
     errors
 };

@@ -164,8 +164,14 @@ module.exports = class extends Generator {
         this.fs.copy(this.templatePath('gitignore'), this.destinationPath('.gitignore'));
         this.fs.copy(this.templatePath('travis.yml'), this.destinationPath('.travis.yml'));
 
-        if (!this.options.ptz.dontCreateIndexTs)
+        if (!this.options.ptz.dontCreateIndexTs) {
             this.fs.copy(this.templatePath('src/_index.ts'), this.destinationPath('src/index.ts'));
+
+            this.fs.copyTpl(
+                this.templatePath('src/_index.test.ts'),
+                this.destinationPath('src/index.test.ts'),
+                this.options.ptz);
+        }
 
         if (!this.options.ptz.dontCreateErrorsTs)
             this.fs.copy(this.templatePath('src/_errors.ts'), this.destinationPath('src/errors.ts'));
