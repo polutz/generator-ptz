@@ -26,8 +26,7 @@ describe('ptz-domain:app', function () {
                 '.babelrc',
 
                 'src/index.ts',
-                'src/index.test.ts',
-                'src/errors.ts'
+                'src/index.test.ts'
             ]);
         });
     });

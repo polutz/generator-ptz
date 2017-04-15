@@ -172,9 +172,6 @@ module.exports = class extends Generator {
                 this.destinationPath('src/index.test.ts'),
                 this.options.ptz);
         }
-
-        if (!this.options.ptz.dontCreateErrorsTs)
-            this.fs.copy(this.templatePath('src/_errors.ts'), this.destinationPath('src/errors.ts'));
     }
 
     //conflicts - Where conflicts are handled (used internally)
