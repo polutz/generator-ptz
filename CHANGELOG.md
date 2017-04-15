@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.16 (April 15, 2017)
+
+* Move errors.ts to generator-ptz-domain.
+
 ## 1.3.15 (April 14, 2017)
 
 * Add index.test.ts.
