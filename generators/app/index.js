@@ -43,7 +43,7 @@ module.exports = class extends Generator {
             typings: "src/index.ts",
             scripts: {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
-                js: "rimraf dist && tsc && babel dist -d dist --presets es2015",
+                js: "rimraf dist-es6 && tsc && rimraf dist && babel dist-es6 -d dist --presets es2015",
                 pretest: "npm-run-all --parallel js lint",
                 mocha: "mocha ./dist/**/*.js --require babel-polyfill",
                 test: "nyc npm run mocha && nyc report --reporter=text-lcov > coverage.lcov && codecov --token=" + this.options.ptz.codecovToken,
@@ -99,12 +99,12 @@ module.exports = class extends Generator {
                 "module": "es6",
                 "moduleResolution": "node",
                 "noImplicitAny": false,
-                "removeComments": true,
+                "removeComments": false,
                 "preserveConstEnums": true,
                 "target": "ES6",
                 "sourceMap": true,
                 "listFiles": false,
-                "outDir": "dist/",
+                "outDir": "dist-es6/",
                 "allowSyntheticDefaultImports": true
             },
             "include": [
