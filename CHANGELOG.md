@@ -1,6 +1,11 @@
 ## master
 
 
+## 1.3.17 (April 15, 2017)
+
+* Create folder dist-es6 for typescript compiler.
+* Create babel source maps.
+
 ## 1.3.16 (April 15, 2017)
 
 * Move errors.ts to generator-ptz-domain.
