@@ -47,7 +47,7 @@ module.exports = class extends Generator {
                 pretest: "npm-run-all --parallel js lint",
                 mocha: "mocha ./dist/**/*.js --require babel-polyfill",
                 test: "nyc npm run mocha && nyc report --reporter=html --reporter=text-lcov > coverage.lcov && f() { EXIT=0; codecov --token=" + this.options.ptz.codecovToken + " || exit $EXIT; }; f",
-                "open:cover": "npm run test && opn ./coverage/lcov-report/index.html",
+                "test:cover": "npm run test && opn ./coverage/lcov-report/index.html",
                 predebug: "npm run pretest",
                 debug: "node --nolazy --debug-brk=5858 dist/index.js"
             },

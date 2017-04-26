@@ -1,6 +1,8 @@
 ## master
 
 
+* Add try catch to codecov npm test script.
+
 ## 1.3.17 (April 25, 2017)
 
 * Create folder dist-es6 for typescript compiler.
