@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.19 (April 26, 2017)
+
+* Add noUnusedLocals: true to tsconfig.json
+
 ## 1.3.18 (April 26, 2017)
 
 * Rename npm script open:cover to test:cover.
