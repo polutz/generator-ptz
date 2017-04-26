@@ -107,7 +107,8 @@ module.exports = class extends Generator {
                 "sourceMap": true,
                 "listFiles": false,
                 "outDir": "dist-es6/",
-                "allowSyntheticDefaultImports": true
+                "allowSyntheticDefaultImports": true,
+                "noUnusedLocals": true
             },
             "include": [
                 "src/**/*.d.ts",
