@@ -1,6 +1,9 @@
 ## master
 
 
+## 1.3.18 (April 26, 2017)
+
+* Rename npm script open:cover to test:cover.
 * Add try catch to codecov npm test script.
 
 ## 1.3.17 (April 25, 2017)
