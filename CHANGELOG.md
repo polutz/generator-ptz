@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.20 (April 26, 2017)
+
+* Transpiling Typescript to esnext.
+
 ## 1.3.19 (April 26, 2017)
 
 * Add noUnusedLocals: true to tsconfig.json
