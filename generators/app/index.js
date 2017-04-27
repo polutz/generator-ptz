@@ -43,7 +43,7 @@ module.exports = class extends Generator {
             typings: "src/index.ts",
             scripts: {
                 lint: "tslint ./src/**/*.ts ./src/**/*.test.ts ./src/**/*.d.ts",
-                js: "rimraf dist-es6 && tsc && rimraf dist && babel dist-es6 -d dist --presets es2015 --source-maps",
+                js: "rimraf dist-esnext && tsc && rimraf dist && babel dist-esnext -d dist --presets es2015 --source-maps",
                 pretest: "npm-run-all --parallel js lint",
                 mocha: "mocha ./dist/**/*.js --require babel-polyfill",
                 test: "nyc npm run mocha && nyc report --reporter=html --reporter=text-lcov > coverage.lcov && f() { EXIT=0; codecov --token=" + this.options.ptz.codecovToken + " || exit $EXIT; }; f",
@@ -64,6 +64,7 @@ module.exports = class extends Generator {
             devDependencies: {
                 "babel-cli": "^6.24.1",
                 "babel-preset-es2015": "^6.24.1",
+                "babel-preset-es2017": "^6.24.1",
                 "codecov": "^2.1.0",
                 "istanbul": "^0.4.5",
                 "mocha": "^3.2.0",
@@ -103,10 +104,10 @@ module.exports = class extends Generator {
                 "noImplicitAny": false,
                 "removeComments": false,
                 "preserveConstEnums": true,
-                "target": "ES6",
+                "target": "esnext",
                 "sourceMap": true,
                 "listFiles": false,
-                "outDir": "dist-es6/",
+                "outDir": "dist-esnext/",
                 "allowSyntheticDefaultImports": true,
                 "noUnusedLocals": true
             },
