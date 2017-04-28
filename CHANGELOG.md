@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.21 (April 28, 2017)
+
+* Add preset es2017 to .babelrc.
+
 ## 1.3.20 (April 26, 2017)
 
 * Transpiling Typescript to esnext.
