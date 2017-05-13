@@ -1,6 +1,10 @@
 ## master
 
 
+## 1.3.21 (May 13, 2017)
+
+* Add docs by Typedoc.
+
 ## 1.3.20 (April 26, 2017)
 
 * Transpiling Typescript to esnext.
