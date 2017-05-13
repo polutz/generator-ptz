@@ -141,7 +141,8 @@ module.exports = class extends Generator {
         const newBabelrc = _.merge(
             {
                 "presets": [
-                    "es2015"
+                    "es2015",
+                    "es2017"
                 ]
             }, currentBabelrc);
 
