@@ -113,7 +113,11 @@ module.exports = class extends Generator {
                 "listFiles": false,
                 "outDir": "dist-esnext/",
                 "allowSyntheticDefaultImports": true,
-                "noUnusedLocals": true
+                "noUnusedLocals": true,
+                "lib": [
+                    "dom",
+                    "es2015"
+                ]
             },
             "include": [
                 "src/**/*.d.ts",
