@@ -48,8 +48,11 @@ module.exports = class extends Generator {
                 mocha: "mocha ./dist/**/*.js --require babel-polyfill",
                 test: "nyc npm run mocha && nyc report --reporter=html --reporter=text-lcov > coverage.lcov && f() { EXIT=0; codecov --token=" + this.options.ptz.codecovToken + " || exit $EXIT; }; f",
                 "test:cover": "npm run test && opn ./coverage/index.html",
+                posttest: "npm run docs:build",
                 predebug: "npm run pretest",
-                debug: "node --nolazy --debug-brk=5858 dist/index.js"
+                debug: "node --nolazy --debug-brk=5858 dist/index.js",
+                "docs:build": "typedoc --out ./docs ./ --includeDeclarations --excludeExternals --exclude '**/*.test.ts'",
+                docs: "npm run docs:build && opn ./docs/index.html"
             },
             repository: {
                 type: "git",
@@ -78,6 +81,7 @@ module.exports = class extends Generator {
                 "typescript": "^2.2.2",
                 "@types/mocha": "^2.2.40",
                 "@types/node": "^7.0.12",
+                "typedoc": "^0.6.0",
                 "opn-cli": "^3.1.0"
             },
             dependencies: {
