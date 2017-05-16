@@ -1,6 +1,11 @@
 ## master
 
 
+## 1.3.23 (May 16, 2017)
+
+* Generate docs after tests.
+* Fix test coverage path.
+
 ## 1.3.22 (May 13, 2017)
 
 * Add docs by Typedoc.
