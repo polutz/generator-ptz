@@ -1,5 +1,8 @@
 ## master
 
+## 1.3.24 (May 16, 2017)
+
+* Add libs to tsconfig.json.
 
 ## 1.3.23 (May 16, 2017)
 
