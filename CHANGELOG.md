@@ -1,5 +1,10 @@
 ## master
 
+
+## 1.3.25 (June 1, 2017)
+
+* Remove docs generation after tests.
+
 ## 1.3.24 (May 16, 2017)
 
 * Add libs to tsconfig.json.
